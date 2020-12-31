@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jaldi:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .outer {
+        display: table;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      .middle {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .inner {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+
+      @keyframes animatedBackground {
+        from {
+          background-position: 0px 0px;
+        }
+        to {
+          background-position: 0px 40vh;
+        }
+      }
+
+      body {
+        background-image: url("../images/background.png");
+        background-repeat: repeat;
+        background-size: 40vh;
+        background-position: 0px 0px;
+        animation: animatedBackground 15s linear infinite;
+        overflow: hidden;
+      }
+
+      .animated {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+      }
+
+      @keyframes wobble {
+        0% {
+          transform: rotate(5deg);
+        }
+        50% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(5deg);
+        }
+      }
+
+      .wobble {
+        -webkit-animation-name: wobble;
+        animation-name: wobble;
+      }
+
+      #avatar {
+        height: 42vh;
+      }
+
+      #message {
+        width: 100%;
+        font-size: 20vh;
+        text-align: center;
+        font-family: "Jaldi", cursive;
+        color: #ffe66d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="middle">
+        <div id="container" class="inner">
+          <center>
+            <img
+              id="avatar"
+              class="animated wobble"
+              src="../images/avatar.png"
+            />
+          </center>
+          <div id="message">B-Right back!</div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    $(document).ready(init());
+
+    function init() {
+      if (getParameterByName("blank") == "true") {
+        $("#container").hide();
+      } else {
+        $("#message").html(getParameterByName("message") || "B-Right back!");
+      }
+    }
+
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return "";
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+  </script>
+</html>

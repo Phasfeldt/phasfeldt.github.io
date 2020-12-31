@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+
+    <style>
+      body {
+        background: rgba(0, 0, 0, 0);
+        overflow: hidden;
+      }
+
+      .animated {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+      }
+
+      @keyframes wobble {
+        0% {
+          transform: rotate(5deg);
+        }
+        50% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(5deg);
+        }
+      }
+
+      .wobble {
+        -webkit-animation-name: wobble;
+        animation-name: wobble;
+      }
+
+      #avatar {
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <img id="avatar" class="animated wobble" src="../images/avatar.png" />
+    </center>
+  </body>
+</html>
