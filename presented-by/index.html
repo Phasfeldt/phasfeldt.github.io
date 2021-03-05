@@ -46,17 +46,18 @@
         width: 100%;
       }
 	  #kekw {
-		letter-spacing: 2px;
-        font-size: 120px;
-        font-family: 'Pacifico', cursive;
-		color: white;
-		-webkit-text-fill-color: white; /* Will override color (regardless of order) */
-		-webkit-text-stroke-width: 5px;
-		-webkit-text-stroke-color: #e49ba6;
-	  }
+    letter-spacing: 2px;
+    font-size: 120px;
+    margin-left: 30%;
+    margin-top: -1%;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #e49ba6;
+}
 	  #cycle {
-		letter-spacing: 2px;
-        font-size: 60px;
+        font-size: 50px;
         font-family: 'Roboto', sans-serif;
 		color: black;
 	  }
@@ -70,55 +71,32 @@
 	}
 	@keyframes cycle {
 	0% {
-		content: "1000 - 12 TIMER MED ALT MINNA HADER";
+		content: "1000: 24 TIMER MED ALT MINNA HADER<p></p>1250: 24 TIMER TIL AT NÅ PLAT 4 I APEX - OR ELSE!";
 	}
-	16.6% {
-		content: "1250 - MINNA HAR 24 TIMER TIL AT NÅ PLAT 4 I APEX - ELLERS SKER DER NOGET!";
-	}
-	49.8% {
-		content: "1337 - MINNA LAVER SERAPHINE COSPLAY";
-	}
-	66.4% {
-		content: "1500 - HAWK LAVER BATTLE BUNNY RIVEN COSPLAY + HAWK FÅR VOKSET BEN";
-	}
-	83% {
-		content: "1750 - MINNA LAVER & CASTER EN CS TURNERING";
+	50% {
+		content: "1337: MINNA LAVER SERAPHINE COSPLAY<p></p>1500: HAWK LAVER BATTLE BUNNY RIVEN COSPLAY + FÅR VOKSET BEN";
 	}
 	100% {
-		content: "2000 - SLACKING, ARWIN, POWAH, PEWDIE, HAWK FÅR VOKSET BEN";
+		content: "1750: MINNA LAVER & CASTER EN CS TURNERING<p></p>2000: SLACKING, ARWIN, POWAH, PEWDIE, HAWK FÅR VOKSET BEN";
 	}
 	}
     </style>
   </head>
   <body>
+  
+          <p id="kekw">SUBGOALS</p>
     <div class="outer">
       <div class="middle">
         <div id="container" class="inner">
-          <p id="kekw">SUBGOALS</p><br />
-		  
-		  <span id="cycle"></span>
+		  <img id="sponsor-logo" src="../images/slide1.png" />
+
+		  <!--<span id="cycle"></span>-->
         </div>
       </div>
     </div>
   </body>
-	<script>
-	const textList = ["1000 - 12 TIMER MED ALT MINNA HADER",
-	"1250 - MINNA HAR 24 TIMER TIL AT NÅ PLAT 4 I APEX - ELLERS SKER DER NOGET!",
-	"1337 - MINNA LAVER SERAPHINE COSPLAY",
-	"1500 - HAWK LAVER BATTLE BUNNY RIVEN COSPLAY + HAWK FÅR VOKSET BEN",
-	"1750 - MINNA LAVER & CASTER EN CS TURNERING",
-	"2000 - SLACKING, ARWIN, POWAH, PEWDIE, HAWK FÅR VOKSET BEN"];
-	const cycle = document.querySelector("#cycle");
-	let i = 0;
-	const cycleText = () => {
-	cycle.innerHTML = textList[i];
-	i = ++i % textList.length;
-	};
-	cycleText();
-	setInterval(cycleText, 1000);
-	</script>
-  <!--<script>
-    var sponsors = ["milk-bar.png", "compycore.png", "ginos-pizza.png"];
+  <script>
+    var sponsors = ["slide1.png","slide2.png", "slide3.png"];
     var displayingSponsor = 0;
 
     setInterval(function() {
@@ -136,6 +114,6 @@
           );
         }
       });
-    }, 30 * 1000);
-  </script>-->
+    }, 10000);
+  </script>
 </html>
