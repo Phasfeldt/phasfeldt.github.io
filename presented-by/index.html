@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <style>
       body {
@@ -18,8 +19,6 @@
       #container {
         color: #f3e8c8;
         text-align: center;
-        font-size: 15vw;
-        font-family: "Roboto Slab", serif;
       }
 
       .outer {
@@ -46,20 +45,82 @@
         margin-top: 1vw;
         width: 100%;
       }
+	  #kekw {
+		letter-spacing: 2px;
+        font-size: 120px;
+        font-family: 'Pacifico', cursive;
+		color: white;
+		-webkit-text-fill-color: white; /* Will override color (regardless of order) */
+		-webkit-text-stroke-width: 5px;
+		-webkit-text-stroke-color: #e49ba6;
+	  }
+	  #cycle {
+		letter-spacing: 2px;
+        font-size: 60px;
+        font-family: 'Roboto', sans-serif;
+		color: white;
+		-webkit-text-fill-color: white; /* Will override color (regardless of order) */
+		-webkit-text-stroke-width: 3px;
+		-webkit-text-stroke-color: #e49ba6;
+	  }
+	  
+	  #cycle:after {
+		-webkit-animation: cycle 4s infinite; /* Safari 4+ */
+		-moz-animation: cycle 4s infinite; /* Fx 5+ */
+		-o-animation: cycle 4s infinite; /* Opera 12+ */
+		animation: cycle 4s infinite; /* IE 10+, Fx 29+ */
+	  }
+	}
+	@keyframes cycle {
+	0% {
+		content: "1000 - 12 TIMER MED ALT MINNA HADER";
+	}
+	16.6% {
+		content: "1250 - MINNA HAR 24 TIMER TIL AT NÅ PLAT 4 I APEX - ELLERS SKER DER NOGET!";
+	}
+	49.8% {
+		content: "1337 - MINNA LAVER SERAPHINE COSPLAY";
+	}
+	66.4% {
+		content: "1500 - HAWK LAVER BATTLE BUNNY RIVEN COSPLAY + HAWK FÅR VOKSET BEN";
+	}
+	83% {
+		content: "1750 - MINNA LAVER & CASTER EN CS TURNERING";
+	}
+	100% {
+		content: "2000 - SLACKING, ARWIN, POWAH, PEWDIE, HAWK FÅR VOKSET BEN";
+	}
+	}
     </style>
   </head>
   <body>
     <div class="outer">
       <div class="middle">
         <div id="container" class="inner">
-          presented by<br />
-          <img id="sponsor-logo" src="../images/milk-bar.png" />
+          <p id="kekw">SUBGOALS</p><br />
+		  
+		  <span id="cycle"></span>
         </div>
       </div>
     </div>
   </body>
-
-  <script>
+	<script>
+	const textList = ["1000 - 12 TIMER MED ALT MINNA HADER",
+	"1250 - MINNA HAR 24 TIMER TIL AT NÅ PLAT 4 I APEX - ELLERS SKER DER NOGET!",
+	"1337 - MINNA LAVER SERAPHINE COSPLAY",
+	"1500 - HAWK LAVER BATTLE BUNNY RIVEN COSPLAY + HAWK FÅR VOKSET BEN",
+	"1750 - MINNA LAVER & CASTER EN CS TURNERING",
+	"2000 - SLACKING, ARWIN, POWAH, PEWDIE, HAWK FÅR VOKSET BEN"];
+	const cycle = document.querySelector("#cycle");
+	let i = 0;
+	const cycleText = () => {
+	cycle.innerHTML = textList[i];
+	i = ++i % textList.length;
+	};
+	cycleText();
+	setInterval(cycleText, 10000);
+	</script>
+  <!--<script>
     var sponsors = ["milk-bar.png", "compycore.png", "ginos-pizza.png"];
     var displayingSponsor = 0;
 
@@ -79,5 +140,5 @@
         }
       });
     }, 30 * 1000);
-  </script>
+  </script>-->
 </html>
